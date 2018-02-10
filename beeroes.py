@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from alva import load_slack_settings, post_slack
-import json
 import logging
 import os
 import pygsheets
+import ujson
 
 
 def create_string(name_list):
@@ -94,4 +94,4 @@ if __name__ == '__main__':
         payload_text['text'] = string_thanks
 
         # once all is well, post to slack
-        post_slack(url, json.dumps(payload_text))
+        post_slack(url, ujson.dumps(payload_text))
